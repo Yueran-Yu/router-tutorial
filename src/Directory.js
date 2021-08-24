@@ -5,6 +5,14 @@ import {getAllEmployees} from "./EmloyeeAPI";
 
 const Directory = () => {
 
+  const link ={
+    fontSize: '40px',
+    textDecoration: 'none',
+    backgroundColor: '#54f1f1',
+    margin: '20px 0',
+    display:'block',
+    padding:'20px'
+  }
   const employeeList = getAllEmployees()
   return (
     <div>
@@ -13,7 +21,7 @@ const Directory = () => {
         {employeeList.map(employee => {
           return (
             <div key={employee.id}>
-              <Link to={`/directory/${employee.id}`}>{employee.name}</Link>
+              <Link style={link} to={`/directory/${employee.id}`}>{employee.name}</Link>
             </div>
           )
         })}
